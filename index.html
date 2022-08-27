@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bijoy to Unicode converter</title>
+	<script type="text/javascript" src="convert.js"></script>
+</head>
+<body>
+	<h3>Copy bijoy text and paste here. Automaticaly will convert to Unicode text</h3>
+	<textarea rows="30" cols="50" id="contents" placeholder="Copy bijoy text and paste here. Automaticaly will convert to Unicode text"></textarea>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$('#contents').on('paste',function(e){
+			// var pastedData = e.originalEvent.clipboardData.getData('text');
+			// let tdata = $('#contents').val();
+			convertToUnicode();
+		});
+
+		
+	});
+
+	function convertToUnicode(){
+		var t="bangla";
+		let w = '';
+		// w = cM(t,w);
+		setTimeout(function(){
+			let new_text = document.getElementById('contents').value;
+			w = cM(t,new_text);
+			document.getElementById('contents').value=w;
+		},100);
+
+	}
+</script>
+</html>
